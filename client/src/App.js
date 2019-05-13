@@ -13,6 +13,8 @@ import CreateSession from './components/lists/sessionList'
 import CreateCampus from './components/create/createCampus'
 import CreateCourse from './components/create/createCourse'
 
+import CampusView from './components/details/campusView'
+
 class App extends Component {
   render(){
     return (
@@ -53,6 +55,7 @@ class App extends Component {
 
               <Route path="/campus/create" component={CreateCampus} />
               <Route path="/course/create" component={CreateCourse} />
+              <Route path='/campus/:id' component={ CampusView } />
             </Switch>
           </div>
         </div>

@@ -28,7 +28,20 @@ class CreateCampus extends Component {
     submitHandler = (e) =>{
        e.preventDefault();
        this.props.createCampus(this.state, this.props.history);
+       this.setState({
+        name:'',
+        short_code:'',
+        phone_no:'',
+        country:'',
+        state:'',
+        city:'',
+        postal_code:'',
+        address:'',
+        website:'',
+        campus_type:''
+       })
     }
+    
 
     render() {
         return (

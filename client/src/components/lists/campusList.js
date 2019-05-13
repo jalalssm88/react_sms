@@ -18,13 +18,33 @@ class CampusList extends Component {
                     <table className="ui celled table">
                         <thead>
                             <tr>
-                                <th>header</th>
+                                <th>Name</th>
+                                <th>Short Code</th>
+                                <th>Phone no</th>
+                                <th>Country</th>
+                                <th>Address</th>
+                                <th>Website</th>
+                                <th>Branch Type</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>body</td>
-                            </tr>
+                            {
+                                this.props.campus.campuses.map(campus => (
+                                    <tr key={campus._id}>
+                                        <td>{campus.name}</td>
+                                        <td>{campus.short_code}</td>
+                                        <td>{campus.phone_no}</td>
+                                        <td>{campus.country}</td>
+                                        <td>{campus.address}</td>
+                                        <td>{campus.website}</td>
+                                        <td>{campus.campus_type}</td>
+                                        <td>
+                                            <Link to={"/campus/"+campus._id} className="ui icon button"><i className="eye icon"></i></Link>
+                                        </td>
+                                    </tr>
+                                ))
+                            }
                         </tbody>
                     </table>
                 </div>
