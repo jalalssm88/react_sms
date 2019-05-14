@@ -20,7 +20,7 @@ class CampusView extends Component {
             <div className="ui three column grid">
                 <div className="column ">
                     <div className="create_view_detail">
-                        <Link to="">Create Program</Link>
+                        <Link to={"/program/"+this.props.match.params.id}>Create Program</Link>
                         <div className="ui divider"></div>
                         <Link to="">Program List</Link>
                     </div>

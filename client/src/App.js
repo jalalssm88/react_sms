@@ -14,6 +14,8 @@ import CreateCampus from './components/create/createCampus'
 import CreateCourse from './components/create/createCourse'
 
 import CampusView from './components/details/campusView'
+import CreateProgram from './components/create/createProgram'
+import ProgramList from './components/lists/programList'
 
 class App extends Component {
   render(){
@@ -56,6 +58,9 @@ class App extends Component {
               <Route path="/campus/create" component={CreateCampus} />
               <Route path="/course/create" component={CreateCourse} />
               <Route path='/campus/:id' component={ CampusView } />
+
+              <Route path="/program/:id" component={CreateProgram}/>
+              <Route exact path='/programs/lists' component={ProgramList} />
             </Switch>
           </div>
         </div>

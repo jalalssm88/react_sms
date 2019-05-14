@@ -13,7 +13,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 const Campus = require('./api/routers/campusRouter');
+const Program = require('./api/routers/programRouter');
+
 app.use('/campus', Campus);
+app.use('/program', Program);
 
 const port = process.env.PORT || 4000;
 app.listen(port, ()=>{
