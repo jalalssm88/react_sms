@@ -19,16 +19,15 @@ export const campusView = (campus_id)=> dispatch =>{
         payload:res.data
     }))
 }
-
 export const createProgram = (programData, history, progs_id)=> dispatch =>{
     axios.post('/program/create',programData).then(res => dispatch({
         type:CREATE_PROGRAM,
         payload:res.data
-    }))
+    })).then(res => history.push('/programs/lists/'+progs_id));
 }
 
 export const getProgram = (prog_id)=> dispatch =>{
-    axios.get('/program/list'+prog_id).then(res => dispatch({
+    axios.get('/program/list/'+prog_id).then(res => dispatch({
         type:GET_PROGRAM,
         payload:res.data
     }))

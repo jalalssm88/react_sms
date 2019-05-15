@@ -54,13 +54,11 @@ class App extends Component {
               <Route path="/campuses/list" component={CampusList} />
               <Route path="/courses/list" component={CourseList} />
               <Route path="/sessions/list" component={CreateSession} />
-
               <Route path="/campus/create" component={CreateCampus} />
               <Route path="/course/create" component={CreateCourse} />
-              <Route path='/campus/:id' component={ CampusView } />
-
+              <Route path='/campus_detail/:id' component={ CampusView } />
               <Route path="/program/:id" component={CreateProgram}/>
-              <Route exact path='/programs/lists' component={ProgramList} />
+              <Route exact path='/programs/lists/:id' component={ProgramList} />
             </Switch>
           </div>
         </div>

@@ -18,10 +18,6 @@ class CreateProgram extends Component {
         })
     }
 
-    componentWillMount(){
-       
-    }
-
     submitHandler = (e) => {
         e.preventDefault();
         console.log('state', this.state)
@@ -30,7 +26,7 @@ class CreateProgram extends Component {
             short_code:this.state.short_code,
             campus_id:this.state.campus_id
         }
-        this.props.createProgram(data, this.props.history, this.props.match.params.id)
+        this.props.createProgram(data, this.props.history,this.props.match.params.id)
         this.setState({
             name:'',
             short_code:'',

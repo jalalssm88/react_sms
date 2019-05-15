@@ -12,16 +12,9 @@ router.get('/list', (req, res) => {
     Campus.find().then(campus => res.json(campus));
 });
 
-// router.get('/list/:id', (req, res) => {
-//     const id = req.params.id;
-//     Campus.findById(id).exec().then(doc => {res.json(doc)});
-// });
-
-router.get('/list/:id', (req, res, next)=> {
-    const id = req.params.id;
-    Campus.findById(id).then(doc =>
-        res.status(200).json(doc)
-    )
-})
+router.get('/list/:id', (req, res)=>{
+    var id = req.params.id
+    Campus.findById(id).then(campus=> res.json(campus));
+});
 
 module.exports = router

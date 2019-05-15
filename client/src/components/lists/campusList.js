@@ -40,7 +40,7 @@ class CampusList extends Component {
                                         <td>{campus.website}</td>
                                         <td>{campus.campus_type}</td>
                                         <td>
-                                            <Link to={"/campus/"+campus._id} className="ui icon button"><i className="eye icon"></i></Link>
+                                            <Link to={"/campus_detail/"+campus._id} className="ui icon button"><i className="eye icon"></i></Link>
                                         </td>
                                     </tr>
                                 ))
