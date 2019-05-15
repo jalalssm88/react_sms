@@ -27,9 +27,9 @@ class CampusView extends Component {
                 </div>
                 <div className="column ">
                     <div className="create_view_detail">
-                        <Link to="">Create Program</Link>
+                        <Link to="">Create Section</Link>
                         <div className="ui divider"></div>
-                        <Link to="">Program List</Link>
+                        <Link to="">Sec List</Link>
                     </div>
                 </div>
                 <div className="column ">
