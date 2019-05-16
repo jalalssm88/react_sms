@@ -14,9 +14,16 @@ app.use(bodyParser.json());
 
 const Campus = require('./api/routers/campusRouter');
 const Program = require('./api/routers/programRouter');
+const Section = require('./api/routers/sectionRouter');
+const Session = require('./api/routers/sessionRouter');
+const Course = require('./api/routers/courseRouter');
 
 app.use('/campus', Campus);
 app.use('/program', Program);
+app.use('/section', Section);
+app.use('/session', Session);
+app.use('/course', Course);
+
 
 const port = process.env.PORT || 4000;
 app.listen(port, ()=>{

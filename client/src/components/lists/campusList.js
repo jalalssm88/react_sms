@@ -25,7 +25,7 @@ class CampusList extends Component {
                                 <th>Address</th>
                                 <th>Website</th>
                                 <th>Branch Type</th>
-                                <th>Action</th>
+                                <th>View Programs</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,7 +40,7 @@ class CampusList extends Component {
                                         <td>{campus.website}</td>
                                         <td>{campus.campus_type}</td>
                                         <td>
-                                            <Link to={"/campus_detail/"+campus._id} className="ui icon button"><i className="eye icon"></i></Link>
+                                            <Link to={"/programs/campus/"+campus._id} className="ui mini labeled green icon button"><i className="eye icon"></i>view</Link>
                                         </td>
                                     </tr>
                                 ))

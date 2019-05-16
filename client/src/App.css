@@ -36,6 +36,7 @@
 #left_menu{
   margin-top: 58px;
   width: 176px;
+  background-color: #2d2d6b;
 }
 
 .main_container{
@@ -44,7 +45,7 @@
   padding-right: 70px;
 }
 
-.create_view_detail{
+.profile_items{
   background: #402659;
   border-radius: 12px;
   height: 120px;
@@ -52,14 +53,14 @@
   padding-top: 25px;
 }
 
-.create_view_detail a {
+.profile_items a {
   text-decoration: none;
   color: white;
   font-weight: bold;
   font-size: 20px;
 }
 
-.create_view_detail a:hover{
+.profile_items a:hover{
   border-bottom: 1px solid;
 
 }

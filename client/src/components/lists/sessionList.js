@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import{Link} from 'react-router-dom';
-import { Modal, Form, Button, Icon } from 'semantic-ui-react';
+import { Modal, Button, Icon } from 'semantic-ui-react';
+import {connect} from 'react-redux';
+import { createSession, getSession } from '../../actions/action';
 
 class SessionList extends Component {
     constructor(props){
@@ -66,6 +67,9 @@ class SessionList extends Component {
             is_active:false
         })
     }
+    componentWillMount(){
+        this.props.getSession();
+    }
     render() {
         return (
             <React.Fragment>
@@ -86,11 +90,11 @@ class SessionList extends Component {
                                 </div>
                                 <div className="field">
                                     <label>Start Date</label>
-                                    <input type="text" name="start_date" value={this.state.start_date} onChange={this.changeHandler}/>
+                                    <input type="date" name="start_date" value={this.state.start_date} onChange={this.changeHandler}/>
                                 </div>
                                 <div className="field">
                                     <label>End Date</label>
-                                    <input type="text" name="end_date" value={this.state.end_date} onChange={this.changeHandler}/>
+                                    <input type="date" name="end_date" value={this.state.end_date} onChange={this.changeHandler}/>
                                 </div>
                                 <div className="field">
                                     <label>Is Active</label>
@@ -112,12 +116,27 @@ class SessionList extends Component {
                     <table className="ui celled table">
                         <thead>
                             <tr>
-                                <th>Agency</th>
+                                <th>Name</th>
+                                <th>Short Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
                                 <th>Is Active</th>
                             </tr>
                         </thead>
                         <tbody>
-                           
+                           {
+                                this.props.my_session.sessions.map(session => (
+                                    <tr key={session._id}>
+                                        <td>{session.name}</td>
+                                        <td>{session.short_name}</td>
+                                        <td>{session.start_date}</td>
+                                        <td>{session.end_date}</td>
+                                        <td>
+                                            {session.is_active === true? <i className="icon large green check circle"></i>:<i className="icon large red remove circle"></i>}
+                                        </td>
+                                    </tr>
+                                ))
+                           }
                         </tbody>
                     </table>
                 </div>
@@ -126,4 +145,8 @@ class SessionList extends Component {
     }
 }
 
-export default SessionList;
+const mapStateToProps = (state) =>({
+    my_session : state.session
+})
+
+export default connect(mapStateToProps,{createSession, getSession}) (SessionList);

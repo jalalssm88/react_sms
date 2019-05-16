@@ -13,9 +13,13 @@ import CreateSession from './components/lists/sessionList'
 import CreateCampus from './components/create/createCampus'
 import CreateCourse from './components/create/createCourse'
 
-import CampusView from './components/details/campusView'
 import CreateProgram from './components/create/createProgram'
 import ProgramList from './components/lists/programList'
+
+import SectionList from './components/lists/sectionList'
+import SessionList from './components/lists/sessionList'
+
+import ProfileDashboard from './components/lists/profileDashboard'
 
 class App extends Component {
   render(){
@@ -34,16 +38,16 @@ class App extends Component {
               <i className="home icon"></i>
               Campuses
             </Link>
-            <Link to="/courses/list" className="item">
-              <i className="block layout icon"></i>
-              Courses
-            </Link>
             <Link to="/sessions/list" className="item">
-              <i className="smile icon"></i>
+              <i className="clock outline icon"></i>
               Sessions
             </Link>
-            <Link to="/profiles" className="item">
-              <i className="smile icon"></i>
+            <Link to="/courses/list" className="item">
+              <i className="book icon"></i>
+              Courses
+            </Link>
+            <Link to="/profile/dashboard" className="item">
+              <i className="users icon"></i>
               Profiles
             </Link>
           </div>
@@ -56,9 +60,11 @@ class App extends Component {
               <Route path="/sessions/list" component={CreateSession} />
               <Route path="/campus/create" component={CreateCampus} />
               <Route path="/course/create" component={CreateCourse} />
-              <Route path='/campus_detail/:id' component={ CampusView } />
               <Route path="/program/:id" component={CreateProgram}/>
-              <Route exact path='/programs/lists/:id' component={ProgramList} />
+              <Route exact path='/programs/campus/:id' component={ProgramList} />
+              <Route path='/sections/program/:id' component={SectionList} />
+              <Route path='/sessions/list' component={SessionList} />
+              <Route path='/profile/dashboard' component={ProfileDashboard} />
             </Switch>
           </div>
         </div>

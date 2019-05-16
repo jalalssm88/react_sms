@@ -23,6 +23,7 @@ class ProgramList extends Component {
                         <tr>
                             <th>Name</th>
                             <th>Short Code</th>
+                            <th>View Sections</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,6 +32,9 @@ class ProgramList extends Component {
                                 <tr key={program._id}>
                                     <td>{program.name}</td>
                                     <td>{program.short_code}</td>
+                                    <td>
+                                        <Link to={"/sections/program/"+program._id} className="ui mini icon labeled green button"><i className="eye icon"></i>view </Link>
+                                    </td>
                                 </tr>
                             ))
                         }

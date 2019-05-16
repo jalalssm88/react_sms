@@ -1,6 +1,16 @@
 export const CREATE_CAMPUS = "CREATE_CAMPUS";
 export const GET_CAMPUS = "GET_CAMPUS";
-export const VIEW_CAMPUS = "VIEW_CAMPUS";
 
-export const CREATE_PROGRAM = "CREATE_PROGRAM"
-export const GET_PROGRAM = "GET_PROGRAM"
+export const CREATE_PROGRAM = "CREATE_PROGRAM";
+export const GET_PROGRAM = "GET_PROGRAM";
+export const GET_PROGRAMS = "GET_PROGRAMS";
+
+export const CREATE_SECTION = "CREATE_SECTION";
+export const GET_SECTION = "GET_SECTION";
+
+export const CREATE_SESSION = "CREATE_SESSION";
+export const GET_SESSION = "GET_SESSION";
+
+export const CREATE_COURSE = "CREATE_COURSE";
+export const GET_COURSE = "GET_COURSE";
+export const ASSIGN_COURSE = "ASSIGN_COURSE";

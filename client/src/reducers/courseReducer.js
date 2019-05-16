@@ -1,21 +1,20 @@
-import {CREATE_CAMPUS, GET_CAMPUS} from '../actions/types';
+import {CREATE_COURSE, GET_COURSE} from '../actions/types';
 
 const initialState = {
-    campuses:[],
-    campus:[]
+    courses:[]
 }
 
 export default function(state = initialState, action){
     switch(action.type){
-        case CREATE_CAMPUS:
+        case CREATE_COURSE:
             return{
                 ...state,
-                campuses:[action.payload, ...state.campuses]
+                courses:[action.payload, ...state.courses]
             }
-        case GET_CAMPUS:
+        case GET_COURSE:
             return{
                 ...state,
-                campuses:action.payload
+                courses:action.payload
             }
         default:
             return{

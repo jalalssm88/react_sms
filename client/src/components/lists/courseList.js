@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import{Link} from 'react-router-dom';
+import {getCourse} from '../../actions/action'
+import { connect } from 'react-redux';
 
 class CoursesList extends Component {
+    componentWillMount(){
+        this.props.getCourse();
+    }
     render() {
         return (
             <React.Fragment>
@@ -13,13 +18,31 @@ class CoursesList extends Component {
                     <table className="ui celled table">
                         <thead>
                             <tr>
-                                <th>header</th>
+                                <th>Name</th>
+                                <th>Short Code</th>
+                                <th>Is Compulsory</th>
+                                <th>Session</th>
+                                <th>Teacher</th>
+                                <th>Program</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>body</td>
-                            </tr>
+                            {
+                                this.props.course.courses.map(course => (
+                                    <tr key={course._id}>
+                                        <td>{course.name}</td>
+                                        <td>{course.short_code}</td>
+                                        <td>
+                                            {
+                                                course.compulsory === true? <i className="icon large green check circle"></i>:<i className="icon large red remove circle"></i>
+                                            }
+                                        </td>
+                                        <td>{course.course_session}</td>
+                                        <td>{course.course_teacher}</td>
+                                        <td>{course.course_program}</td>
+                                    </tr>
+                                ))
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -28,4 +51,8 @@ class CoursesList extends Component {
     }
 }
 
-export default CoursesList;
+const mapStateToProps = (state) =>({
+    course:state.course
+})
+
+export default connect(mapStateToProps,{getCourse}) (CoursesList);
